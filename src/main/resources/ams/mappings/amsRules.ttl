@@ -1,0 +1,249 @@
+	@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+	@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+	@prefix dash: <http://datashapes.org/dash#> .
+	@prefix sh: <http://www.w3.org/ns/shacl#> .
+	@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+	@prefix asbing: <http://asbing.de/condition/def/> .
+	@prefix prov: <http://www.w3.org/ns/prov#> .
+	@prefix bot: <https://w3id.org/bot#> .
+	@prefix eurotl: <http://www.roadotl.eu/def/> .
+	@prefix bot2ams: <http://icdd.vm.rub.de/ontology/amsicdd#> .
+	@prefix inst: <http://www.inf.bi.rub.de/semweb/AMSComponentInspection/inst2578#> .
+
+
+	bot2ams:ElementShape
+		a sh:NodeShape ;
+		sh:targetClass bot:Element ;
+		sh:rule [
+					a sh:SPARQLRule ;
+					sh:construct """
+					PREFIX bot2ams: <http://icdd.vm.rub.de/ontology/amsicdd#>
+					PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+					PREFIX sqlinst: <http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#>
+					PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+					PREFIX asbing: <http://asbing.de/condition/def/>
+					PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+					PREFIX prov: <http://www.w3.org/ns/prov#>
+					PREFIX bot: <https://w3id.org/bot#>
+					PREFIX eurotl: <http://www.roadotl.eu/def/>
+
+					CONSTRUCT {
+						 $this bot2ams:hasSqlInsert ?insert .
+						 						?insert a bot2ams:SqlInsert .
+						 						?insert bot2ams:hasSqlDB ?database .
+						 						?insert bot2ams:hasSqlTable ?dbtable .
+						 						?insert bot2ams:hasSqlQuery ?dbquery .
+						 						?insert bot2ams:hasSqlColumns ?dbcolumnObject .
+						 								?dbcolumnObject a bot2ams:SqlColumn  .
+						 								?dbcolumnObject bot2ams:sqlColumnName "[component_id]" .
+						 								?dbcolumnObject bot2ams:sqlColumnValue ?componentID .
+						 						?insert bot2ams:hasSqlColumns ?dbcolumnObject2 .
+						 								?dbcolumnObject2 a bot2ams:SqlColumn  .
+						 								?dbcolumnObject2 bot2ams:sqlColumnName "[inspection_id]" .
+						 								?dbcolumnObject2 bot2ams:sqlColumnValue ?inspectionFK .
+						 					    ?insert bot2ams:hasSqlColumns ?dbcolumnObject3 .
+						 								?dbcolumnObject3 a bot2ams:SqlColumn  .
+						 								?dbcolumnObject3 bot2ams:sqlColumnName "[safetyGrade]" .
+						 								?dbcolumnObject3 bot2ams:sqlColumnValue ?safetyGrade .
+						 						?insert bot2ams:hasSqlColumns ?dbcolumnObject4 .
+						 								?dbcolumnObject4 a bot2ams:SqlColumn  .
+						 								?dbcolumnObject4 bot2ams:sqlColumnName "[stabilityGrade]" .
+						 								?dbcolumnObject4 bot2ams:sqlColumnValue ?stabilityGrade .
+						 						?insert bot2ams:hasSqlColumns ?dbcolumnObject5 .
+						 								?dbcolumnObject5 a bot2ams:SqlColumn  .
+						 								?dbcolumnObject5 bot2ams:sqlColumnName "[durabilityGrade]" .
+						 								?dbcolumnObject5 bot2ams:sqlColumnValue ?durabilityGrade .
+						 						?insert bot2ams:hasSqlColumns ?dbcolumnObject6 .
+						 								?dbcolumnObject6 a bot2ams:SqlColumn  .
+						 								?dbcolumnObject6 bot2ams:sqlColumnName "[damageDescription]" .
+						 								?dbcolumnObject6 bot2ams:sqlColumnValue ?damageDescription .
+
+
+
+					}
+					WHERE {
+						$this bot2ams:hasCondition ?condition .
+						{
+							SELECT ?durabilityGrade
+								WHERE {
+									$this bot2ams:hasCondition ?condition .
+									?condition rdf:type ?type .
+									?condition  prov:value ?value .
+									BIND(?value as ?durabilityGrade)
+									VALUES (?type) {(asbing:Durability_Category_0) (asbing:Durability_Category_1) (asbing:Durability_Category_2) (asbing:Durability_Category_3) (asbing:Durability_Category_4)}
+								}
+						}
+						{
+						SELECT ?stabilityGrade
+							WHERE {
+								$this bot2ams:hasCondition ?condition .
+								?condition rdf:type ?type .
+								?condition  prov:value ?value .
+								BIND(?value as ?stabilityGrade)
+								VALUES (?type) {(asbing:Stability_Category_0) (asbing:Stability_Category_1) (asbing:Stability_Category_2) (asbing:Stability_Category_3) (asbing:Stability_Category_4)}
+						}}
+						{
+							SELECT ?safetyGrade
+								WHERE {
+									$this bot2ams:hasCondition ?condition .
+									?condition rdf:type ?type .
+									?condition  prov:value ?value .
+									BIND(?value as ?safetyGrade)
+									VALUES (?type) {(asbing:Safety_Category_0) (asbing:Safety_Category_1) (asbing:Safety_Category_2) (asbing:Safety_Category_3) (asbing:Safety_Category_4)}
+								}
+						}
+							{
+								SELECT ?damageDescription
+									WHERE {
+
+										OPTIONAL{
+											$this bot2ams:hasCondition ?condition .
+											?condition rdf:type eurotl:Condition .
+											?condition  prov:value ?value .
+										}
+										BIND(IF(bound(?value),?value,"") as ?damageDescription)
+									}
+							}
+
+						{
+							SELECT ?inspectionFK
+								WHERE {
+									?building bot:hasElement $this .
+									?building bot2ams:hadActivity ?inspectionActivity .
+									?inspectionActivity prov:atTime ?dateTime .
+									BIND(STRBEFORE(STR(?dateTime),"T") as ?inspectionDate)
+									BIND(STRAFTER(STR(?building),"#") as ?structureID)
+									BIND(CONCAT("(SELECT [inspection_id] From [dbo].[Inspection] WHERE  [inspectionDate]='", ?inspectionDate,"' AND [structure_id]='",?structureID,"')") as ?inspectionFK)
+								}
+						}
+						{
+							SELECT ?componentID
+								WHERE {
+									BIND(STRAFTER(STR($this),"_") as ?componentID)
+								}
+						}
+						BIND(IRI(CONCAT("http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlInsert_",MD5(STR(NOW())))) as ?insert)
+						BIND(IRI(CONCAT("http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_",MD5(STR(NOW())),"1")) as ?dbcolumnObject)
+						BIND(IRI(CONCAT("http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_",MD5(STR(NOW())),"2")) as ?dbcolumnObject2)
+						BIND(IRI(CONCAT("http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_",MD5(STR(NOW())),"3")) as ?dbcolumnObject3)
+						BIND(IRI(CONCAT("http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_",MD5(STR(NOW())),"4")) as ?dbcolumnObject4)
+						BIND(IRI(CONCAT("http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_",MD5(STR(NOW())),"5")) as ?dbcolumnObject5)
+						BIND(IRI(CONCAT("http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_",MD5(STR(NOW())),"6")) as ?dbcolumnObject6)
+						BIND(CONCAT(" (",?componentID,",",?inspectionFK ,",",?safetyGrade,",",?stabilityGrade,",",?durabilityGrade,",'",?damageDescription,"')") as ?dbvalues)
+						BIND("[DemoDBSIB]" as ?database)
+						BIND("[dbo].[Condition]" as ?dbtable)
+						BIND(" ([component_id] ,[inspection_id] ,[safetyGrade] ,[stabilityGrade] ,[durabilityGrade] ,[damageDescription])" as ?dbcolumns)
+						BIND(CONCAT("USE ",?database," GO INSERT INTO ", ?dbtable, ?dbcolumns, " VALUES ", ?dbvalues, " GO") as ?dbquery)
+					}
+					""" ;
+				] .
+
+	bot2ams:InspectionShape
+		a sh:NodeShape ;
+		sh:targetClass eurotl:InspectionActivity ;
+		sh:rule [
+					a sh:SPARQLRule ;
+					sh:construct """
+					PREFIX bot2ams: <http://icdd.vm.rub.de/ontology/amsicdd#>
+					PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+					PREFIX sqlinst: <http://www.inf.bi.rub.de/semweb/SQL/inst2578#>
+					PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+					PREFIX asbing: <http://asbing.de/condition/def/>
+					PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+					PREFIX prov: <http://www.w3.org/ns/prov#>
+					PREFIX bot: <https://w3id.org/bot#>
+					PREFIX eurotl: <http://www.roadotl.eu/def/>
+
+					CONSTRUCT {
+
+						 $this bot2ams:hasSqlInsert ?insert .
+												 ?insert a bot2ams:SqlInsert .
+												 ?insert bot2ams:hasSqlDB ?database .
+												 ?insert bot2ams:hasSqlQuery ?dbquery .
+												 ?insert bot2ams:hasSqlTable ?dbtable .
+												# ?insert bot2ams:hasSqlColums ?dbcolumns .
+												# ?insert bot2ams:hasSqlValues ?dbvalues .
+												?insert bot2ams:hasSqlColumns ?dbcolumnObject1 .
+						 								?dbcolumnObject1 a bot2ams:SqlColumn  .
+						 								?dbcolumnObject1 bot2ams:sqlColumnName "[structure_id]" .
+						 								?dbcolumnObject1 bot2ams:sqlColumnValue ?structureID .
+						 						?insert bot2ams:hasSqlColumns ?dbcolumnObject2 .
+						 								?dbcolumnObject2 a bot2ams:SqlColumn  .
+						 								?dbcolumnObject2 bot2ams:sqlColumnName "[inspector]" .
+						 								?dbcolumnObject2 bot2ams:sqlColumnValue ?inspectingPerson .
+						 					    ?insert bot2ams:hasSqlColumns ?dbcolumnObject3 .
+						 								?dbcolumnObject3 a bot2ams:SqlColumn  .
+						 								?dbcolumnObject3 bot2ams:sqlColumnName "[inspectionBody]" .
+						 								?dbcolumnObject3 bot2ams:sqlColumnValue ?inspectionBody .
+						 						?insert bot2ams:hasSqlColumns ?dbcolumnObject4 .
+						 								?dbcolumnObject4 a bot2ams:SqlColumn  .
+						 								?dbcolumnObject4 bot2ams:sqlColumnName "[inspectionDate]" .
+						 								?dbcolumnObject4 bot2ams:sqlColumnValue ?inspectionDate .
+						 						?insert bot2ams:hasSqlColumns ?dbcolumnObject5 .
+						 								?dbcolumnObject5 a bot2ams:SqlColumn  .
+						 								?dbcolumnObject5 bot2ams:sqlColumnName "[inspectionType]" .
+						 								?dbcolumnObject5 bot2ams:sqlColumnValue " " .
+						 						?insert bot2ams:hasSqlColumns ?dbcolumnObject6 .
+						 								?dbcolumnObject6 a bot2ams:SqlColumn  .
+						 								?dbcolumnObject6 bot2ams:sqlColumnName "[structureGrade]" .
+						 								?dbcolumnObject6 bot2ams:sqlColumnValue ?structureGrade .
+					}
+					WHERE {
+						$this eurotl:hasCondition ?condition .
+						{
+							SELECT ?structureGrade
+								WHERE {
+									$this eurotl:hasCondition ?condition .
+									?condition rdf:type ?type .
+									?condition  prov:value ?value .
+									BIND(REPLACE(STR(?value),",",".") as ?structureGrade)
+								}
+						}
+
+						{
+							SELECT ?structureID
+								WHERE {
+									?building bot2ams:hadActivity $this .
+									BIND(STRAFTER(STR(?building),"_") as ?structureID)
+								}
+						}
+						{
+							SELECT ?inspectingPerson
+								WHERE {
+									$this prov:wasAssociatedWith ?inspector .
+									?inspector rdf:type prov:Person .
+									?inspector prov:value ?inspectingPerson .
+								}
+						}
+						{
+							SELECT ?inspectionBody
+								WHERE {
+									$this prov:wasAssociatedWith ?insporg .
+									?insporg rdf:type prov:Organization .
+									?insporg prov:value ?inspectionBody .
+								}
+						}
+						{
+							SELECT ?inspectionDate
+								WHERE {
+									$this prov:atTime ?dateTime .
+									BIND(STRBEFORE(STR(?dateTime),"T") as ?inspectionDate)
+								}
+						}
+
+						BIND(IRI(CONCAT("http://www.inf.bi.rub.de/semweb/ns/bot2ams#sqlInsert_",MD5(STR(NOW())))) as ?insert)
+						BIND(IRI(CONCAT("http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_",MD5(STR(NOW())),"1")) as ?dbcolumnObject1)
+						BIND(IRI(CONCAT("http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_",MD5(STR(NOW())),"2")) as ?dbcolumnObject2)
+						BIND(IRI(CONCAT("http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_",MD5(STR(NOW())),"3")) as ?dbcolumnObject3)
+						BIND(IRI(CONCAT("http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_",MD5(STR(NOW())),"4")) as ?dbcolumnObject4)
+						BIND(IRI(CONCAT("http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_",MD5(STR(NOW())),"5")) as ?dbcolumnObject5)
+						BIND(IRI(CONCAT("http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_",MD5(STR(NOW())),"6")) as ?dbcolumnObject6)
+						BIND(CONCAT(" ('",?structureID,"','",?inspectingPerson,"','",?inspectionBody,"','",?inspectionDate,"','',",?structureGrade,")") as ?dbvalues)
+						BIND("[DemoDBSIB]" as ?database)
+						BIND("[dbo].[Inspection]" as ?dbtable)
+						BIND(" ([structure_id],[inspector],[inspectionBody],[inspectionDate],[inspectionType],[structureGrade])" as ?dbcolumns)
+						BIND(CONCAT("USE ",?database," GO INSERT INTO ", ?dbtable, ?dbcolumns, " VALUES ", ?dbvalues , " GO") as ?dbquery)
+					}
+					""" ;
+				] .
+

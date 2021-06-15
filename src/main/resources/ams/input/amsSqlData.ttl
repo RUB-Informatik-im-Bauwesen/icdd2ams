@@ -1,0 +1,232 @@
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Inspection_5>
+        a       <http://icdd.vm.rub.de/ontology/amsql#Inspection> ;
+        <http://icdd.vm.rub.de/ontology/amsql#hasStructure>
+                <http://icdd.vm.rub.de/ontology/amsql/inst2579#Structure_DE25315654> ;
+        <http://icdd.vm.rub.de/ontology/amsql#inspectionBody>
+                "Engineer consortium" ;
+        <http://icdd.vm.rub.de/ontology/amsql#inspectionDate>
+                "2004-06-07"^^<java:java.sql.Date> ;
+        <http://icdd.vm.rub.de/ontology/amsql#inspectionType>
+                "einfach visual" ;
+        <http://icdd.vm.rub.de/ontology/amsql#inspector>
+                "John Co.                                          " ;
+        <http://icdd.vm.rub.de/ontology/amsql#structureGrade>
+                "1"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Inspection_4>
+        a       <http://icdd.vm.rub.de/ontology/amsql#Inspection> ;
+        <http://icdd.vm.rub.de/ontology/amsql#hasStructure>
+                <http://icdd.vm.rub.de/ontology/amsql/inst2579#Structure_DE10000000> ;
+        <http://icdd.vm.rub.de/ontology/amsql#inspectionBody>
+                "Muster consortium" ;
+        <http://icdd.vm.rub.de/ontology/amsql#inspectionDate>
+                "2015-09-04"^^<java:java.sql.Date> ;
+        <http://icdd.vm.rub.de/ontology/amsql#inspectionType>
+                "visual" ;
+        <http://icdd.vm.rub.de/ontology/amsql#inspector>
+                "Muster                                            " ;
+        <http://icdd.vm.rub.de/ontology/amsql#structureGrade>
+                2.3 .
+
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Component_3>
+        a       <http://icdd.vm.rub.de/ontology/amsql#Component> ;
+        <http://icdd.vm.rub.de/ontology/amsql#asbing>
+                "130011911000000" ;
+        <http://icdd.vm.rub.de/ontology/amsql#hasStructure>
+                <http://icdd.vm.rub.de/ontology/amsql/inst2579#Structure_DE10000000> ;
+        <http://icdd.vm.rub.de/ontology/amsql#location>
+                "east" ;
+        <http://icdd.vm.rub.de/ontology/amsql#name>
+                "abutment wall east" .
+
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Component_9>
+        a       <http://icdd.vm.rub.de/ontology/amsql#Component> ;
+        <http://icdd.vm.rub.de/ontology/amsql#asbing>
+                "13001111200000 " ;
+        <http://icdd.vm.rub.de/ontology/amsql#hasStructure>
+                <http://icdd.vm.rub.de/ontology/amsql/inst2579#Structure_DE10000000> ;
+        <http://icdd.vm.rub.de/ontology/amsql#location>
+                "north" ;
+        <http://icdd.vm.rub.de/ontology/amsql#name>
+                "main girder north" .
+
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Inspection_3>
+        a       <http://icdd.vm.rub.de/ontology/amsql#Inspection> ;
+        <http://icdd.vm.rub.de/ontology/amsql#hasStructure>
+                <http://icdd.vm.rub.de/ontology/amsql/inst2579#Structure_DE10000000> ;
+        <http://icdd.vm.rub.de/ontology/amsql#inspectionBody>
+                "Engineer consortium" ;
+        <http://icdd.vm.rub.de/ontology/amsql#inspectionDate>
+                "2010-02-01"^^<java:java.sql.Date> ;
+        <http://icdd.vm.rub.de/ontology/amsql#inspectionType>
+                "visual" ;
+        <http://icdd.vm.rub.de/ontology/amsql#inspector>
+                "John Co                                           " ;
+        <http://icdd.vm.rub.de/ontology/amsql#structureGrade>
+                1.7 .
+
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Structure_DE10000000>
+        a       <http://icdd.vm.rub.de/ontology/amsql#Structure> ;
+        <http://icdd.vm.rub.de/ontology/amsql#amt>
+                "Germnay" ;
+        <http://icdd.vm.rub.de/ontology/amsql#location>
+                "NRW, Germany" ;
+        <http://icdd.vm.rub.de/ontology/amsql#name>
+                "Road bridge" ;
+        <http://icdd.vm.rub.de/ontology/amsql#type>
+                "concrete bam bridge" ;
+        <http://icdd.vm.rub.de/ontology/amsql#year>
+                "1995" .
+
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Component_2>
+        a       <http://icdd.vm.rub.de/ontology/amsql#Component> ;
+        <http://icdd.vm.rub.de/ontology/amsql#asbing>
+                "130021212100000" ;
+        <http://icdd.vm.rub.de/ontology/amsql#hasStructure>
+                <http://icdd.vm.rub.de/ontology/amsql/inst2579#Structure_DE10000000> ;
+        <http://icdd.vm.rub.de/ontology/amsql#location>
+                "east" ;
+        <http://icdd.vm.rub.de/ontology/amsql#name>
+                "foudation east" .
+
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Component_8>
+        a       <http://icdd.vm.rub.de/ontology/amsql#Component> ;
+        <http://icdd.vm.rub.de/ontology/amsql#asbing>
+                "130011913000000" ;
+        <http://icdd.vm.rub.de/ontology/amsql#hasStructure>
+                <http://icdd.vm.rub.de/ontology/amsql/inst2579#Structure_DE10000000> ;
+        <http://icdd.vm.rub.de/ontology/amsql#location>
+                "east" ;
+        <http://icdd.vm.rub.de/ontology/amsql#name>
+                "Bearing east" .
+
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Component_13>
+        a       <http://icdd.vm.rub.de/ontology/amsql#Component> ;
+        <http://icdd.vm.rub.de/ontology/amsql#asbing>
+                "13002212100000 " ;
+        <http://icdd.vm.rub.de/ontology/amsql#hasStructure>
+                <http://icdd.vm.rub.de/ontology/amsql/inst2579#Structure_DE10000000> ;
+        <http://icdd.vm.rub.de/ontology/amsql#location>
+                "south" ;
+        <http://icdd.vm.rub.de/ontology/amsql#name>
+                "railing south" .
+
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Structure_DE25315002>
+        a       <http://icdd.vm.rub.de/ontology/amsql#Structure> ;
+        <http://icdd.vm.rub.de/ontology/amsql#amt>
+                "Germany" ;
+        <http://icdd.vm.rub.de/ontology/amsql#location>
+                "NRW, Germany" ;
+        <http://icdd.vm.rub.de/ontology/amsql#name>
+                "Freeway bridge" ;
+        <http://icdd.vm.rub.de/ontology/amsql#type>
+                "steel grid bridge" ;
+        <http://icdd.vm.rub.de/ontology/amsql#year>
+                "1998" .
+
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Component_1>
+        a       <http://icdd.vm.rub.de/ontology/amsql#Component> ;
+        <http://icdd.vm.rub.de/ontology/amsql#asbing>
+                "130021212100000" ;
+        <http://icdd.vm.rub.de/ontology/amsql#hasStructure>
+                <http://icdd.vm.rub.de/ontology/amsql/inst2579#Structure_DE10000000> ;
+        <http://icdd.vm.rub.de/ontology/amsql#location>
+                "west" ;
+        <http://icdd.vm.rub.de/ontology/amsql#name>
+                "foudation west" .
+
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Condition_2>
+        a       <http://icdd.vm.rub.de/ontology/amsql#Condition> ;
+        <http://icdd.vm.rub.de/ontology/amsql#damageDescription>
+                "Cracks on the abutment wall with wide of 1 - 2mm " ;
+        <http://icdd.vm.rub.de/ontology/amsql#durabilityGrade>
+                "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://icdd.vm.rub.de/ontology/amsql#hasInspection>
+                <http://icdd.vm.rub.de/ontology/amsql/inst2579#Inspection_4> ;
+        <http://icdd.vm.rub.de/ontology/amsql#relatedComponent>
+                <http://icdd.vm.rub.de/ontology/amsql/inst2579#Component_3> ;
+        <http://icdd.vm.rub.de/ontology/amsql#safetyGrade>
+                "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://icdd.vm.rub.de/ontology/amsql#stabilityGrade>
+                "1"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Component_12>
+        a       <http://icdd.vm.rub.de/ontology/amsql#Component> ;
+        <http://icdd.vm.rub.de/ontology/amsql#asbing>
+                "13002212100000 " ;
+        <http://icdd.vm.rub.de/ontology/amsql#hasStructure>
+                <http://icdd.vm.rub.de/ontology/amsql/inst2579#Structure_DE10000000> ;
+        <http://icdd.vm.rub.de/ontology/amsql#location>
+                "north" ;
+        <http://icdd.vm.rub.de/ontology/amsql#name>
+                "railing north" .
+
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Component_6>
+        a       <http://icdd.vm.rub.de/ontology/amsql#Component> ;
+        <http://icdd.vm.rub.de/ontology/amsql#asbing>
+                "130011913000000" ;
+        <http://icdd.vm.rub.de/ontology/amsql#hasStructure>
+                <http://icdd.vm.rub.de/ontology/amsql/inst2579#Structure_DE10000000> ;
+        <http://icdd.vm.rub.de/ontology/amsql#location>
+                "west" ;
+        <http://icdd.vm.rub.de/ontology/amsql#name>
+                "Bearing west" .
+
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Condition_1>
+        a       <http://icdd.vm.rub.de/ontology/amsql#Condition> ;
+        <http://icdd.vm.rub.de/ontology/amsql#damageDescription>
+                "Cracks on the abutment wall with wide of 1mm " ;
+        <http://icdd.vm.rub.de/ontology/amsql#durabilityGrade>
+                "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://icdd.vm.rub.de/ontology/amsql#hasInspection>
+                <http://icdd.vm.rub.de/ontology/amsql/inst2579#Inspection_3> ;
+        <http://icdd.vm.rub.de/ontology/amsql#relatedComponent>
+                <http://icdd.vm.rub.de/ontology/amsql/inst2579#Component_3> ;
+        <http://icdd.vm.rub.de/ontology/amsql#safetyGrade>
+                "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://icdd.vm.rub.de/ontology/amsql#stabilityGrade>
+                "1"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Component_11>
+        a       <http://icdd.vm.rub.de/ontology/amsql#Component> ;
+        <http://icdd.vm.rub.de/ontology/amsql#asbing>
+                "13002210000000 " ;
+        <http://icdd.vm.rub.de/ontology/amsql#hasStructure>
+                <http://icdd.vm.rub.de/ontology/amsql/inst2579#Structure_DE10000000> ;
+        <http://icdd.vm.rub.de/ontology/amsql#name>
+                "pavement" .
+
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Structure_DE25315654>
+        a       <http://icdd.vm.rub.de/ontology/amsql#Structure> ;
+        <http://icdd.vm.rub.de/ontology/amsql#amt>
+                "Germany" ;
+        <http://icdd.vm.rub.de/ontology/amsql#location>
+                "Germany" ;
+        <http://icdd.vm.rub.de/ontology/amsql#name>
+                "Pederstrain bridge" ;
+        <http://icdd.vm.rub.de/ontology/amsql#type>
+                "cable stray bridge" ;
+        <http://icdd.vm.rub.de/ontology/amsql#year>
+                "2002" .
+
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Component_5>
+        a       <http://icdd.vm.rub.de/ontology/amsql#Component> ;
+        <http://icdd.vm.rub.de/ontology/amsql#asbing>
+                "130011911000000" ;
+        <http://icdd.vm.rub.de/ontology/amsql#hasStructure>
+                <http://icdd.vm.rub.de/ontology/amsql/inst2579#Structure_DE10000000> ;
+        <http://icdd.vm.rub.de/ontology/amsql#location>
+                "west" ;
+        <http://icdd.vm.rub.de/ontology/amsql#name>
+                "abutment wall west" .
+
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Component_10>
+        a       <http://icdd.vm.rub.de/ontology/amsql#Component> ;
+        <http://icdd.vm.rub.de/ontology/amsql#asbing>
+                "13001111200000 " ;
+        <http://icdd.vm.rub.de/ontology/amsql#hasStructure>
+                <http://icdd.vm.rub.de/ontology/amsql/inst2579#Structure_DE10000000> ;
+        <http://icdd.vm.rub.de/ontology/amsql#location>
+                "south" ;
+        <http://icdd.vm.rub.de/ontology/amsql#name>
+                "main girder south" .

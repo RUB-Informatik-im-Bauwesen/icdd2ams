@@ -1,0 +1,6 @@
+{
+    "base": "http://example.org/",
+    "query": "/src/main/resources/ams/mappings/query.rqg",
+    "graph": "/src/main/resources/ams/input/insertData.ttl",
+    "log": "5"
+}

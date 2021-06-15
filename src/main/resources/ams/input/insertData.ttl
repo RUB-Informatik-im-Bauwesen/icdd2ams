@@ -1,0 +1,100 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Structure_DE10000000>
+        <http://icdd.vm.rub.de/ontology/amsicdd#hadActivity>
+                <http://icdd.vm.rub.de/ontology/amsql/inst2579#Inspection_New> .       
+
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Inspection_New>
+        a           <http://www.roadotl.eu/def/InspectionActivity> ;
+        rdfs:label  "visual" ;
+        <http://www.roadotl.eu/def/hasCondition>
+                [ a           <http://www.roadotl.eu/def/Condition> ;
+                  rdfs:label  "Structure grade of the inspection" ;
+                  <http://www.w3.org/ns/prov#value>
+                          3.3
+                ] ;
+        <http://www.w3.org/ns/prov#atLocation>
+                [ a           <http://www.roadotl.eu/def/Address> ;
+                  rdfs:label  "Address of inspected bridge" ;
+                  <http://www.w3.org/ns/prov#value>
+                          "NRW, Germany"
+                ] ;
+        <http://www.w3.org/ns/prov#atTime>
+                "2015-09-04"^^<java:java.sql.Date> ;
+        <http://www.w3.org/ns/prov#wasAssociatedWith>
+                [ a           <http://www.w3.org/ns/prov#Organization> ;
+                  rdfs:label  "Name of inspection organisation" ;
+                  <http://www.w3.org/ns/prov#value>
+                          "Ruhr-Universität Bochum"
+                ] ;
+        <http://www.w3.org/ns/prov#wasAssociatedWith>
+                [ a           <http://www.w3.org/ns/prov#Person> ;
+                  rdfs:label  "Name of agent" ;
+                  <http://www.w3.org/ns/prov#value>
+                          "Liu Liu"
+                ] .
+
+                
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Structure_DE1000573>
+        <http://icdd.vm.rub.de/ontology/amsicdd#hadActivity>
+                <http://icdd.vm.rub.de/ontology/amsql/inst2579#Inspection_New2> .       
+
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Inspection_New2>
+        a           <http://www.roadotl.eu/def/InspectionActivity> ;
+        rdfs:label  "visual" ;
+        <http://www.roadotl.eu/def/hasCondition>
+                [ a           <http://www.roadotl.eu/def/Condition> ;
+                  rdfs:label  "Structure grade of the inspection" ;
+                  <http://www.w3.org/ns/prov#value>
+                          5
+                ] ;
+        <http://www.w3.org/ns/prov#atLocation>
+                [ a           <http://www.roadotl.eu/def/Address> ;
+                  rdfs:label  "Address of inspected bridge" ;
+                  <http://www.w3.org/ns/prov#value>
+                          "NRW, Germany"
+                ] ;
+        <http://www.w3.org/ns/prov#atTime>
+                "2021-09-04"^^<java:java.sql.Date> ;
+        <http://www.w3.org/ns/prov#wasAssociatedWith>
+                [ a           <http://www.w3.org/ns/prov#Organization> ;
+                  rdfs:label  "Name of inspection organisation" ;
+                  <http://www.w3.org/ns/prov#value>
+                          "Ruhr-Universitaet Bochum"
+                ] ;
+        <http://www.w3.org/ns/prov#wasAssociatedWith>
+                [ a           <http://www.w3.org/ns/prov#Person> ;
+                  rdfs:label  "Name of agent" ;
+                  <http://www.w3.org/ns/prov#value>
+                          "Liu Liu und Philipp Hagedorn"
+                ] .
+
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Component_9>
+        a           <https://w3id.org/bot#Element> ;
+        rdfs:label  "main girder north" ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#hasCondition>
+                [ a           <http://www.roadotl.eu/def/Condition> ;
+                  rdfs:label  "Condition description" ;
+                  <http://www.w3.org/ns/prov#hadActivity>
+                          <http://icdd.vm.rub.de/ontology/amsql/inst2579#Inspection_New> ;
+                  <http://www.w3.org/ns/prov#value>
+                          "Cracks on the girder with wide of 1 - 2mm "
+                ] .
+
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Component_3>
+        a           <https://w3id.org/bot#Element> ;
+        rdfs:label  "abutment wall east" ;
+
+        <http://icdd.vm.rub.de/ontology/amsicdd#hasCondition>
+                [ a           <http://asbing.de/condition/def/Durability_Category_2> ;
+                  rdfs:label  "Durability grade 2" ;
+                  <http://www.w3.org/ns/prov#hadActivity>
+                          <http://icdd.vm.rub.de/ontology/amsql/inst2579#Inspection_3> ;
+                  <http://www.w3.org/ns/prov#value>
+                          "2"^^xsd:int
+                ] .
+
+  

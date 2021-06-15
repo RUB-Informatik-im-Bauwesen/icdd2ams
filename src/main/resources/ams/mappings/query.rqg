@@ -1,0 +1,35 @@
+PREFIX st:   <http://ns.inria.fr/sparql-template/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+TEMPLATE {
+   "USE [DemoDBSIB] GO\nINSERT INTO [dbo].[Inspection] ([structure_id],[inspector],[inspectionBody],[inspectionDate],[inspectionType],[structureGrade]) \nVALUES  ('"?structureID"','"?personLabel"','"?organisationLabel"','"?date"','"?label"',"?condition") \nGO\n" 
+  ; separator =  "\n\n"
+}
+WHERE {
+    ?inspection a <http://www.roadotl.eu/def/InspectionActivity> ;
+        rdfs:label  ?label;  
+        <http://www.w3.org/ns/prov#atTime> ?date .
+
+    OPTIONAL{
+        ?inspection <http://www.roadotl.eu/def/hasCondition> ?overallCondition .
+        ?overallCondition a <http://www.roadotl.eu/def/Condition> ;
+            <http://www.w3.org/ns/prov#value> ?condition .
+    }
+    OPTIONAL{
+        ?structure  <http://icdd.vm.rub.de/ontology/amsicdd#hadActivity> ?inspection .   
+        BIND(STRAFTER(STR(?structure),"_") as ?structureID)
+    }
+     OPTIONAL{
+        ?inspection <http://www.w3.org/ns/prov#wasAssociatedWith> ?organisation .
+        ?organisation a <http://www.w3.org/ns/prov#Organization> ;
+            <http://www.w3.org/ns/prov#value> ?organisationLabel .
+    }
+
+    OPTIONAL{
+        ?inspection <http://www.w3.org/ns/prov#wasAssociatedWith> ?person .
+        ?person a <http://www.w3.org/ns/prov#Person> ;
+            <http://www.w3.org/ns/prov#value> ?personLabel .
+    }
+} ORDER BY ?label

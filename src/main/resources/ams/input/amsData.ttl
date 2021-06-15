@@ -1,0 +1,243 @@
+# baseURI: http://www.inf.bi.rub.de/semweb/AMSComponentInspection/inst2578/
+# imports: http://asbing.de/condition/def/
+# imports: http://www.inf.bi.rub.de/semweb/ns/bot2ams
+# imports: http://www.roadotl.eu/def/
+# imports: https://w3id.org/bot#
+
+@prefix asbing: <http://asbing.de/condition/def/> .
+@prefix bot: <https://w3id.org/bot#> .
+@prefix bot2ams: <http://www.inf.bi.rub.de/semweb/ns/bot2ams#> .
+@prefix eurotl: <http://www.roadotl.eu/def/> .
+@prefix inst: <http://www.inf.bi.rub.de/semweb/AMSComponentInspection/inst2578#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.inf.bi.rub.de/semweb/AMSComponentInspection/inst2578>
+  rdf:type owl:Ontology ;
+  owl:imports asbing: ;
+  owl:imports bot2ams: ;
+  owl:imports eurotl: ;
+  owl:imports bot: ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+inst:Address_RoadBridge
+  rdf:type eurotl:Address ;
+  rdfs:label "Address of road bridge" ;
+  prov:value "NRW, Germany" ;
+.
+inst:DE10000000
+  rdf:type bot:Building ;
+  bot2ams:hadActivity inst:InspectionRoadBridge ;
+  rdfs:label "Road bridge" ;
+  bot:hasElement inst:ID_1 ;
+  bot:hasElement inst:ID_10 ;
+  bot:hasElement inst:ID_11 ;
+  bot:hasElement inst:ID_2 ;
+  bot:hasElement inst:ID_3 ;
+  bot:hasElement inst:ID_5 ;
+  bot:hasElement inst:ID_6 ;
+  bot:hasElement inst:ID_8 ;
+  bot:hasElement inst:ID_9 ;
+.
+inst:DamageCrack
+  rdf:type eurotl:Condition ;
+  rdfs:label "Damage description for Crack" ;
+  prov:value "Cracks on concrete with width < 2mm" ;
+.
+inst:DamageMoisture
+  rdf:type eurotl:Condition ;
+  rdfs:label "Damage Description for Moisture" ;
+  prov:value "Moisture area on reinforced concrete 1m x 1.5 m" ;
+.
+inst:DamagePavement
+  rdf:type eurotl:Condition ;
+  rdfs:label "Damage description for Pavement" ;
+  prov:value "There are cracks mesh punctually covered the surface of pavement, is about 10% of the whole surface" ;
+.
+inst:DamageRust
+  rdf:type eurotl:Condition ;
+  rdfs:label "Damage description for steel or reinforcment as rust" ;
+  prov:value "Rust damage on steel with deepth > 1mm" ;
+.
+inst:DamageSpalling
+  rdf:type eurotl:Condition ;
+  rdfs:label "Damage description for spalling" ;
+  prov:value "Spalling on solid elements of concrete, with area 0,3 m x 0,5 m" ;
+.
+inst:Durability_0
+  rdf:type asbing:Durability_Category_0 ;
+  rdfs:label "Durability grade 0" ;
+  prov:value "0" ;
+.
+inst:Durability_1
+  rdf:type asbing:Durability_Category_1 ;
+  rdfs:label "Durability grade 1" ;
+  prov:value "1" ;
+.
+inst:Durability_2
+  rdf:type asbing:Durability_Category_2 ;
+  rdfs:label "Durability grade 2" ;
+  prov:value "2" ;
+.
+inst:Durability_3
+  rdf:type asbing:Durability_Category_3 ;
+  rdfs:label "Durability grade 3" ;
+  prov:value "3" ;
+.
+inst:Durability_4
+  rdf:type asbing:Durability_Category_4 ;
+  rdfs:label "Durability grade 4" ;
+  prov:value "4" ;
+.
+inst:ID_1
+  rdf:type bot:Element ;
+  bot2ams:hasCondition inst:Durability_0 ;
+  bot2ams:hasCondition inst:Safety_0 ;
+  bot2ams:hasCondition inst:Stability_0 ;
+  rdfs:label "foundation west" ;
+.
+inst:ID_10
+  rdf:type bot:Element ;
+  bot2ams:hasCondition inst:DamageSpalling ;
+  bot2ams:hasCondition inst:Durability_3 ;
+  bot2ams:hasCondition inst:Safety_1 ;
+  bot2ams:hasCondition inst:Stability_2 ;
+  rdfs:label "main girder south" ;
+.
+inst:ID_11
+  rdf:type bot:Element ;
+  bot2ams:hasCondition inst:DamagePavement ;
+  bot2ams:hasCondition inst:Durability_1 ;
+  bot2ams:hasCondition inst:Safety_1 ;
+  bot2ams:hasCondition inst:Stability_0 ;
+  rdfs:label "pavement" ;
+.
+inst:ID_2
+  rdf:type bot:Element ;
+  bot2ams:hasCondition inst:Durability_0 ;
+  bot2ams:hasCondition inst:Safety_0 ;
+  bot2ams:hasCondition inst:Stability_0 ;
+  rdfs:label "foundation east" ;
+.
+inst:ID_3
+  rdf:type bot:Element ;
+  bot2ams:hasCondition inst:DamageMoisture ;
+  bot2ams:hasCondition inst:Durability_2 ;
+  bot2ams:hasCondition inst:Safety_1 ;
+  bot2ams:hasCondition inst:Stability_1 ;
+  rdfs:label "abutment wall east" ;
+.
+inst:ID_5
+  rdf:type bot:Element ;
+  bot2ams:hasCondition inst:Durability_0 ;
+  bot2ams:hasCondition inst:Safety_0 ;
+  bot2ams:hasCondition inst:Stability_0 ;
+  rdfs:label "abutment wall west" ;
+.
+inst:ID_6
+  rdf:type bot:Element ;
+  bot2ams:hasCondition inst:DamageSpalling ;
+  bot2ams:hasCondition inst:Durability_2 ;
+  bot2ams:hasCondition inst:Safety_1 ;
+  bot2ams:hasCondition inst:Stability_2 ;
+  rdfs:label "Bearing west" ;
+.
+inst:ID_8
+  rdf:type bot:Element ;
+  bot2ams:hasCondition inst:Durability_0 ;
+  bot2ams:hasCondition inst:Safety_0 ;
+  bot2ams:hasCondition inst:Stability_0 ;
+  rdfs:label "Bearing east" ;
+.
+inst:ID_9
+  rdf:type bot:Element ;
+  bot2ams:hasCondition inst:DamageRust ;
+  bot2ams:hasCondition inst:Durability_3 ;
+  bot2ams:hasCondition inst:Safety_1 ;
+  bot2ams:hasCondition inst:Stability_2 ;
+  rdfs:label "main girder north" ;
+.
+inst:InspectAgent
+  rdf:type prov:Organization ;
+  rdfs:label "Name of agent" ;
+  prov:value "Jo & Co. Engineer Consortium" ;
+.
+inst:InspectionRoadBridge
+  rdf:type eurotl:InspectionActivity ;
+  eurotl:hasCondition inst:StructureGrade ;
+  rdfs:label "Inspection of road bridge" ;
+  prov:atLocation inst:Address_RoadBridge ;
+  prov:atTime "2021-03-17T12:55:47.689"^^xsd:dateTime ;
+  prov:wasAssociatedWith inst:InspectAgent ;
+  prov:wasAssociatedWith inst:Inspector ;
+.
+inst:Inspector
+  rdf:type prov:Person ;
+  rdfs:label "Name of the inspector" ;
+  prov:value "John Co" ;
+.
+inst:Safety_0
+  rdf:type asbing:Safety_Category_0 ;
+  rdfs:label "Safety grade 0" ;
+  prov:value "0" ;
+.
+inst:Safety_1
+  rdf:type asbing:Safety_Category_1 ;
+  rdfs:label "Safety grade 1" ;
+  prov:value "1" ;
+.
+inst:Safety_2
+  rdf:type asbing:Safety_Category_2 ;
+  rdfs:label "Safety grade 2" ;
+  prov:value "2" ;
+.
+inst:Safety_3
+  rdf:type asbing:Safety_Category_3 ;
+  rdfs:label "Safety grade 3" ;
+  prov:value "3" ;
+.
+inst:Safety_4
+  rdf:type asbing:Safety_Category_4 ;
+  rdfs:label "Safety grade 4" ;
+  prov:value "4" ;
+.
+inst:Stability_0
+  rdf:type asbing:Stability_Category_0 ;
+  rdfs:label "Stability grade 0" ;
+  prov:value "0" ;
+.
+inst:Stability_1
+  rdf:type asbing:Stability_Category_1 ;
+  rdfs:label "Stability grade 1" ;
+  prov:value "1" ;
+.
+inst:Stability_2
+  rdf:type asbing:Stability_Category_2 ;
+  rdfs:label "Stability grade 2" ;
+  prov:value "2" ;
+.
+inst:Stability_3
+  rdf:type asbing:Stability_Category_3 ;
+  rdfs:label "Stability grade 3" ;
+  prov:value "3" ;
+.
+inst:Stability_4
+  rdf:type asbing:Stability_Category_4 ;
+  rdfs:label "Stability grade 4" ;
+  prov:value "4" ;
+.
+inst:StructureGrade
+  rdf:type eurotl:Condition ;
+  rdfs:label "Structure grade of the inspection" ;
+  prov:value "2,5" ;
+.
+<http://www.inf.bi.rub.de/semweb/AMSComponentInspection/inst2578/>
+  rdf:type owl:Ontology ;
+  owl:imports asbing: ;
+  owl:imports <http://www.inf.bi.rub.de/semweb/ns/bot2ams> ;
+  owl:imports eurotl: ;
+  owl:imports bot: ;
+.

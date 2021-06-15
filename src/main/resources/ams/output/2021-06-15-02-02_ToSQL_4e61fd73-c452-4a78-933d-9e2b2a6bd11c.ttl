@@ -1,0 +1,118 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_e8dd9bf533906bf29e04f98a70e113394>
+        a       <http://icdd.vm.rub.de/ontology/amsicdd#SqlColumn> ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#sqlColumnName>
+                "[inspectionDate]" ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#sqlColumnValue>
+                "" .
+
+<http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_dc9469ab765a13d1a60cc4342d209fd15>
+        a       <http://icdd.vm.rub.de/ontology/amsicdd#SqlColumn> ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#sqlColumnName>
+                "[inspectionType]" ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#sqlColumnValue>
+                " " .
+
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Inspection_New>
+        <http://icdd.vm.rub.de/ontology/amsicdd#hasSqlInsert>
+                <http://www.inf.bi.rub.de/semweb/ns/bot2ams#sqlInsert_dc9469ab765a13d1a60cc4342d209fd1> .
+
+<http://www.inf.bi.rub.de/semweb/ns/bot2ams#sqlInsert_dc9469ab765a13d1a60cc4342d209fd1>
+        a       <http://icdd.vm.rub.de/ontology/amsicdd#SqlInsert> ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#hasSqlColumns>
+                <http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_dc9469ab765a13d1a60cc4342d209fd16> , <http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_dc9469ab765a13d1a60cc4342d209fd12> , <http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_dc9469ab765a13d1a60cc4342d209fd13> , <http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_dc9469ab765a13d1a60cc4342d209fd14> , <http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_dc9469ab765a13d1a60cc4342d209fd11> , <http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_dc9469ab765a13d1a60cc4342d209fd15> ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#hasSqlDB>
+                "[DemoDBSIB]" ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#hasSqlQuery>
+                "USE [DemoDBSIB] GO INSERT INTO [dbo].[Inspection] ([structure_id],[inspector],[inspectionBody],[inspectionDate],[inspectionType],[structureGrade]) VALUES  ('DE10000000','Liu Liu','Ruhr-Universität Bochum','','',3.3) GO" ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#hasSqlTable>
+                "[dbo].[Inspection]" .
+
+<http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_e8dd9bf533906bf29e04f98a70e113392>
+        a       <http://icdd.vm.rub.de/ontology/amsicdd#SqlColumn> ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#sqlColumnName>
+                "[inspector]" ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#sqlColumnValue>
+                "Liu Liu und Philipp Hagedorn" .
+
+<http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_dc9469ab765a13d1a60cc4342d209fd13>
+        a       <http://icdd.vm.rub.de/ontology/amsicdd#SqlColumn> ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#sqlColumnName>
+                "[inspectionBody]" ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#sqlColumnValue>
+                "Ruhr-Universität Bochum" .
+
+<http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_e8dd9bf533906bf29e04f98a70e113395>
+        a       <http://icdd.vm.rub.de/ontology/amsicdd#SqlColumn> ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#sqlColumnName>
+                "[inspectionType]" ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#sqlColumnValue>
+                " " .
+
+<http://icdd.vm.rub.de/ontology/amsql/inst2579#Inspection_New2>
+        <http://icdd.vm.rub.de/ontology/amsicdd#hasSqlInsert>
+                <http://www.inf.bi.rub.de/semweb/ns/bot2ams#sqlInsert_e8dd9bf533906bf29e04f98a70e11339> .
+
+<http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_dc9469ab765a13d1a60cc4342d209fd11>
+        a       <http://icdd.vm.rub.de/ontology/amsicdd#SqlColumn> ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#sqlColumnName>
+                "[structure_id]" ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#sqlColumnValue>
+                "DE10000000" .
+
+<http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_dc9469ab765a13d1a60cc4342d209fd16>
+        a       <http://icdd.vm.rub.de/ontology/amsicdd#SqlColumn> ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#sqlColumnName>
+                "[structureGrade]" ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#sqlColumnValue>
+                "3.3" .
+
+<http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_e8dd9bf533906bf29e04f98a70e113393>
+        a       <http://icdd.vm.rub.de/ontology/amsicdd#SqlColumn> ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#sqlColumnName>
+                "[inspectionBody]" ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#sqlColumnValue>
+                "Ruhr-Universitaet Bochum" .
+
+<http://www.inf.bi.rub.de/semweb/ns/bot2ams#sqlInsert_e8dd9bf533906bf29e04f98a70e11339>
+        a       <http://icdd.vm.rub.de/ontology/amsicdd#SqlInsert> ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#hasSqlColumns>
+                <http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_e8dd9bf533906bf29e04f98a70e113396> , <http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_e8dd9bf533906bf29e04f98a70e113394> , <http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_e8dd9bf533906bf29e04f98a70e113395> , <http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_e8dd9bf533906bf29e04f98a70e113393> , <http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_e8dd9bf533906bf29e04f98a70e113392> , <http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_e8dd9bf533906bf29e04f98a70e113391> ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#hasSqlDB>
+                "[DemoDBSIB]" ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#hasSqlQuery>
+                "USE [DemoDBSIB] GO INSERT INTO [dbo].[Inspection] ([structure_id],[inspector],[inspectionBody],[inspectionDate],[inspectionType],[structureGrade]) VALUES  ('DE1000573','Liu Liu und Philipp Hagedorn','Ruhr-Universitaet Bochum','','',5) GO" ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#hasSqlTable>
+                "[dbo].[Inspection]" .
+
+<http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_dc9469ab765a13d1a60cc4342d209fd14>
+        a       <http://icdd.vm.rub.de/ontology/amsicdd#SqlColumn> ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#sqlColumnName>
+                "[inspectionDate]" ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#sqlColumnValue>
+                "" .
+
+<http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_e8dd9bf533906bf29e04f98a70e113391>
+        a       <http://icdd.vm.rub.de/ontology/amsicdd#SqlColumn> ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#sqlColumnName>
+                "[structure_id]" ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#sqlColumnValue>
+                "DE1000573" .
+
+<http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_e8dd9bf533906bf29e04f98a70e113396>
+        a       <http://icdd.vm.rub.de/ontology/amsicdd#SqlColumn> ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#sqlColumnName>
+                "[structureGrade]" ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#sqlColumnValue>
+                "5" .
+
+<http://www.inf.bi.rub.de/semweb/ams2sql/inst2578#sqlColumn_dc9469ab765a13d1a60cc4342d209fd12>
+        a       <http://icdd.vm.rub.de/ontology/amsicdd#SqlColumn> ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#sqlColumnName>
+                "[inspector]" ;
+        <http://icdd.vm.rub.de/ontology/amsicdd#sqlColumnValue>
+                "Liu Liu" .
