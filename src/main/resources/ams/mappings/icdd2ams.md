@@ -1,10 +1,10 @@
 Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.4
 
-# Asset Condition Integration of BOT Elements amsicdd
+# Asset Condition Integration from ICDD to AMS (icdd2ams)
 
 ## Metadata
 * **IRI**
-  * `http://icdd.vm.rub.de/ontology/amsicdd#`
+  * `http://icdd.vm.rub.de/ontology/icdd2ams#`
 * **Creators(s)**
   * Liu Liu
   * Philipp Hagedorn
@@ -17,9 +17,9 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.4
 * **License**
   * [https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/)
 * **Ontology RDF**
-  * RDF ([amsicdd.ttl](turtle))
+  * RDF ([icdd2ams.ttl](turtle))
 ### Description
-<p>Ontology for integrating BOT located asset conditions into sql based asset management systems</p>
+<p>Ontology for integrating BOT located asset conditions using eurotl and asbing ontologies into sql based asset management systems</p>
 
 ## Table of Contents
 1. [Object Properties](#objectproperties)
@@ -27,31 +27,32 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.4
 1. [Legend](#legend)
 
 
+## Classes
+
 ## Object Properties
-[The Activity relation representing the inspection of a building](#TheActivityrelationrepresentingtheinspectionofabuilding),
-[The condition of an element regarding an inspection activity](#Theconditionofanelementregardinganinspectionactivity),
-[](TheActivityrelationrepresentingtheinspectionofabuilding)
-### The Activity relation representing the inspection of a building
+[icdd2ams:hadActivity](#icdd2ams:hadActivity),
+[icdd2ams:hasCondition](#icdd2ams:hasCondition),
+[](icdd2ams:hadActivity)
+### icdd2ams:hadActivity
 Property | Value
 --- | ---
-IRI | `http://icdd.vm.rub.de/ontology/amsicdd#hadActivity`
-Description | The Activity relation representing the inspection of a BOT building, using a EUROTL InspectionActivity Object
+IRI | `http://icdd.vm.rub.de/ontology/icdd2ams#hadActivity`
+Description | The activity relation representing the inspection of a BOT building, using a eurotl InspectionActivity individual
 Super-properties |[prov:hadActivity](http://www.w3.org/ns/prov#hadActivity)<br />
 Domain(s) |[bot:Building](https://w3id.org/bot#Building) (c)<br />
 Range(s) |[eurotl:InspectionActivity](http://www.roadotl.eu/def/InspectionActivity) (c)<br />
-[](Theconditionofanelementregardinganinspectionactivity)
-### The condition of an element regarding an inspection activity
+[](icdd2ams:hasCondition)
+### icdd2ams:hasCondition
 Property | Value
 --- | ---
-IRI | `http://icdd.vm.rub.de/ontology/amsicdd#hasCondition`
+IRI | `http://icdd.vm.rub.de/ontology/icdd2ams#hasCondition`
+Description | The condition of an element regarding an inspection activity
 Super-properties |[eurotl:hasCondition](http://www.roadotl.eu/def/hasCondition)<br />
 Domain(s) |[bot:Element](https://w3id.org/bot#Element) (c)<br />
 Range(s) |[eurotl:Condition](http://www.roadotl.eu/def/Condition) (c)<br />
 
 ## Named Individuals
 ## Namespaces
-* **amsicdd**
-  * `http://icdd.vm.rub.de/ontology/amsicdd#`
 * **asbing**
   * `http://asbing.de/condition/def/`
 * **bot**
@@ -60,6 +61,8 @@ Range(s) |[eurotl:Condition](http://www.roadotl.eu/def/Condition) (c)<br />
   * `http://purl.org/dc/terms/`
 * **eurotl**
   * `http://www.roadotl.eu/def/`
+* **icdd2ams**
+  * `http://icdd.vm.rub.de/ontology/icdd2ams#`
 * **owl**
   * `http://www.w3.org/2002/07/owl#`
 * **prov**
