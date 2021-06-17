@@ -15,7 +15,7 @@ This repository contains ontologies, data, queries, and source code presented in
 ### Resources [mappings]
 - [`src/main/resources/ams/mappings/query.rqg`](src/main/resources/ams/mappings/query.rqg): sample SPARQL template for generating SQL INSERT query using STTL
 - [`src/main/resources/ams/mappings/amsRules.ttl`](src/main/resources/ams/mappings/amsRules.ttl): general mapping rules for inferring `bot:Element` and `eurotl:InspectionActivity` into SQL Schema 
-- [`src/main/resources/ams/mappings/amsicdd.ttl`](src/main/resources/ams/mappings/amsicdd.ttl) : Ontology for adding relations between `bot`, `eurotl` and `asbing`, see [Documentation](https://icdd.vm.rub.de/ontology/icdd2ams/)
+- [`src/main/resources/ams/mappings/icdd2ams.ttl`](src/main/resources/ams/mappings/icdd2ams.ttl) : Ontology for adding relations between `bot`, `eurotl` and `asbing`, see [Documentation](https://icdd.vm.rub.de/ontology/icdd2ams/)
 
 ## Third party licenses and dependencies
 - this approach makes use of SPARQL-Generate (sparql-generate.jar) extension of Apache Jena for STTL generation provided on https://github.com/sparql-generate/sparql-generate under Apache License, Version 2.0. 
